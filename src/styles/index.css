@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+
+@theme {
+  --color-primary: #2563EB;
+  --color-success: #16A34A;
+  --color-danger: #DC2626;
+  --color-warning: #F59E0B;
+  --color-dark: #0F172A;
+  --color-dark-card: #1E293B;
+}
+
+@layer base {
+  * {
+    @apply border-slate-200 dark:border-slate-800;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 antialiased selection:bg-primary/10 selection:text-primary;
+  }
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
